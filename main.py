@@ -1,3 +1,4 @@
+import argparse
 import xml.etree.ElementTree as ET
 import zipfile
 import requests
@@ -62,14 +63,20 @@ def extract_coordinates_from_kmz(kmz_file_path, interval=300):
     }
 
 # Example usage
-kmz_file_path =                                 # GIVE YOUR PATHH
-interval = 300                                  # change this for the desired value
-result = extract_coordinates_from_kmz(kmz_file_path, interval)
+def main():
+    parser = argparse.ArgumentParser(description="Extract coordinates and elevations from KMZ file")
+    parser.add_argument("--dataroot", required=True, help="Path to the KMZ file")
+    parser.add_argument("--interval", type=int, default=300, help="Interval value in meters (default: 300)")
+    args = parser.parse_args()
 
-start_lat = start[0][1]
-start_long =  start[0][0]
+    result = extract_coordinates_from_kmz(args.kmz_file_path, args.interval)
 
+    start_lat = start[0][1]
+    start_long = start[0][0]
 
-print(f"Interpolated Coordinates and Elevations every {interval} meters:")
-for i, (coord, elevations) in enumerate(zip(result['interpolated_coordinates'], result['interpolated_elevations'])):
-    print(f"Point {i + 1}: Latitude: {coord[0]}, Longitude: {coord[1]}, Elevations: {elevations}, DISTANCE : {geodesic((start_lat, start_long), (coord[0], coord[1]))}")
+    print(f"Interpolated Coordinates and Elevations every {args.interval} meters:")
+    for i, (coord, elevations) in enumerate(zip(result['interpolated_coordinates'], result['interpolated_elevations'])):
+        print(f"Point {i + 1}: Latitude: {coord[0]}, Longitude: {coord[1]}, Elevations: {elevations}, DISTANCE : {geodesic((start_lat, start_long), (coord[0], coord[1]))}")
+
+if __name__ == "__main__":
+    main()

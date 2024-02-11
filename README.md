@@ -6,41 +6,18 @@
 OIL Pipeline project for Indian Reservation in Stanfield
 
 
-Pipeline Elevation Profile
-Overview
+RUN THIS REPO :
 
-This repository contains a Python script for extracting coordinates and elevations from a KMZ file, generating an elevation profile along a pipeline route.
-Usage
-Prerequisites
+clone this repo onto your local
+ git clone https://github.com/JVSCHANDRADITHYA/Pipeline-Elevation-Profile.git
+ cd Pipeline-Elevation-Profile
 
-    Python 3.11
-    Git
+Run the req.txt file
+ python -r req.txt
 
-Clone Repository
+I'd recommend creating a conda environment with a minium re of python version of 3.11
+(Optional) conda create -n project_pipeline python=3.11
 
-bash
-
-git clone https://github.com/JVSCHANDRADITHYA/Pipeline-Elevation-Profile.git
-cd Pipeline-Elevation-Profile
-
-Set Up Environment
-
-bash
-
-# (Optional) Create a conda environment
-conda create -n project_pipeline python=3.11
-conda activate project_pipeline
-
-Install Dependencies
-
-bash
-
-pip install -r requirements.txt
-
-Run Main Script
-
-bash
-
-python main.py --kmz_file_path (KMZ FILE PATH) --interval (INTERVAL VALUE)
-
-Replace (KMZ FILE PATH) with the path to your KMZ file and (INTERVAL VALUE) with the desired interval value.
+Run the main script 
+ python main.py --dataroot (FILE PATH) --interval (interval value)
+ 

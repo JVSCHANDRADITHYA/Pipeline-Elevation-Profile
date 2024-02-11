@@ -62,8 +62,8 @@ def extract_coordinates_from_kmz(kmz_file_path, interval=300):
     }
 
 # Example usage
-kmz_file_path = 'E:\\project_pipline\\resources\\Project_IOCL_RAJASTHAN.kmz'
-interval = 300                                   # change this for the desired value
+kmz_file_path =                                 # GIVE YOUR PATHH
+interval = 300                                  # change this for the desired value
 result = extract_coordinates_from_kmz(kmz_file_path, interval)
 
 start_lat = start[0][1]

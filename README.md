@@ -8,16 +8,20 @@ OIL Pipeline project for Indian Reservation in Stanfield
 
 RUN THIS REPO :
 
-clone this repo onto your local
- git clone https://github.com/JVSCHANDRADITHYA/Pipeline-Elevation-Profile.git
- cd Pipeline-Elevation-Profile
-
-Run the req.txt file
+Clone this repository onto your local machine:
+```bash
+git clone https://github.com/JVSCHANDRADITHYA/Pipeline-Elevation-Profile.git
+cd Pipeline-Elevation-Profile
+```
+Execute the following command to install the required dependencies:
+``` bash
  python -r req.txt
+```
+For optimal isolation, it is recommended to create a conda environment with a minimum Python version of 3.11 (optional step):
+``` bash
+ conda create -n project_pipeline python=3.11
+```
 
-I'd recommend creating a conda environment with a minium re of python version of 3.11
-(Optional) conda create -n project_pipeline python=3.11
-
-Run the main script 
+Run the main script with the specified parameters:
+```bash
  python main.py --dataroot (FILE PATH) --interval (interval value)
- 

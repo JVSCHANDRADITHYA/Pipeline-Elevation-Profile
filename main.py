@@ -69,7 +69,7 @@ def main():
     parser.add_argument("--interval", type=int, default=300, help="Interval value in meters (default: 300)")
     args = parser.parse_args()
 
-    result = extract_coordinates_from_kmz(args.kmz_file_path, args.interval)
+    result = extract_coordinates_from_kmz(args.dataroot, args.interval)
 
     start_lat = start[0][1]
     start_long = start[0][0]

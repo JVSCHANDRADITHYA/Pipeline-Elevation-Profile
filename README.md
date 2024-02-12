@@ -15,7 +15,7 @@ cd Pipeline-Elevation-Profile
 ```
 Execute the following command to install the required dependencies:
 ``` bash
- python -r req.txt
+ pip install -r req.txt
 ```
 For optimal isolation, it is recommended to create a conda environment with a minimum Python version of 3.11 (optional step):
 ``` bash
